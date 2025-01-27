@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --primary-background: #000;
+    --secondary-background: #2F3336;
+    --primary-font: #fff;
+    --secondary-font: #e7e9ea;
+    --hover-effect: #16181C;
+    --component-color: #1DA1F2;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body,*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: var(--primary-background);
+    color: var(--primary-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+}
+
+.login-container {
+    background-color: var(--secondary-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-title {
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    color: var(--primary-font);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-font);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    background-color: var(--primary-background);
+    border: 1px solid var(--hover-effect);
+    color: var(--primary-font);
+}
+
+.btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--component-color);
+    color: var(--primary-font);
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--hover-effect);
+}
+
+.register-btn {
+    background-color: transparent;
+    border: 1px solid var(--component-color);
+    color: var(--component-color);
+}
+
+.register-btn:hover {
+    background-color: var(--hover-effect);
+    color: var(--primary-font);
+}

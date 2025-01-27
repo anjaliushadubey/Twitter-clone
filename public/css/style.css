@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --primary-background: #000;
+    --secondary-background: #2F3336;
+    --primary-font: #fff;
+    --secondary-font: #e7e9ea;
+    --hover-effect: #16181C;
+    --component-color: #1DA1F2;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body,*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    font-family: "Roboto", sans-serif;
+}
+
+button{
+    color: var(--primary-font);
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: var(--component-color);
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    padding: 7px 50px;
+    border-radius: 50rem;
+    cursor: pointer;
+}
+
+.profile-pic{
+    width: 40px;
+    height: 40px;
+    border-radius: 50rem;
+    
+    background-image: url('./../src/profile.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+#username,#name{
+    display: none;
+}
+
+.user-card{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 1.4rem;
+    color: var(--secondary-font);
+    border-radius: 50rem;
+    background-color: var(--hover-effect);
+    width: fit-content;
+    padding: 10px;
+    box-sizing: content-box;
+}
+
+.user-card div p:last-child{
+    font-weight: 200;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    background: var(--secondary-background);
+
+    display: grid;
+    grid-template-columns: minmax(150px, 400px) minmax(500px, auto) minmax(250px, 400px);
+    grid-template-areas: "left center right";
+
+    gap: 1.5px;
+}
+
+.left{
+    padding: 50px 30px;
+    grid-area: left;
+
+    background: var(--primary-background);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--secondary-font);
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    width: 150px;
+
+    color: var(--secondary-font);
+}
+
+nav>a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--secondary-font);
+    font-size: 1.8rem;
+}
+
+
+.center{
+    grid-area: center;
+
+    background: var(--primary-background);
+    padding: 20px 50px;
+    height: 100vh;
+}
+
+.center .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+    height: 35px;
+}
+
+.center p{
+    color: var(--secondary-font);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.center .line{
+    width: 80px;
+    height: 3px;
+    border-radius: 50rem;
+    background-color: var(--component-color);
+}
+
+#post-section{
+    display: flex;
+    align-items: start;
+    gap: 10px;
+
+    height: 170px;
+}
+
+#post-section form{
+    width: auto;
+    min-width: 80%;
+}
+
+#post-section textarea{
+    background-color: var(--primary-background);
+    resize: none;
+    width: 100%;
+    color: var(--primary-font);
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--secondary-font);
+    margin-bottom: 20px;
+}
+
+#posts{
+    width: 100%;
+    height: calc(100% - 220px);
+    
+    background-color: var(--primary-background);
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: var(--primary-background);
+    padding: 20px;
+
+    border: 2px solid var(--secondary-background);
+}
+
+.posts .info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.posts .info .name{
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.posts .info .username{
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+.posts .date{
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+.profile{
+    width: 100%;
+    height: 100%;
+    color: var(--secondary-font);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.profile h4{
+    font-size: 2.2rem;
+    color: var(--component-color);
+}
+
+.profile>.info .profile-pic{
+    width: 120px;
+    height: 120px;
+}
+
+.profile>.info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    
+    padding: 20px;
+    border-top: 2px solid var(--secondary-background);
+    border-bottom: 2px solid var(--secondary-background);
+}
+
+.profile .info .name{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.profile .info .username{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.profile .info .followers, .profile .info .followings{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--component-color);
+}
+
+.profile .reach-list{
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.profile .reach-list .follow-list{
+    border: 2px solid var(--secondary-background);
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+
+    height: auto;
+    max-height: 50vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.profile .reach-list .info{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.profile .reach-list .follow-list .name{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.profile .reach-list .follow-list .username{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.right{
+    grid-area: right;
+    height: 100vh;
+
+    background: var(--primary-background);
+    color: var(--secondary-font);
+    padding: 30px;
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.right .follow-list{
+    width: 100%;
+    height: auto;
+    max-height: 40%;
+    padding: 20px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: overflow 0.3s ease;
+}
+
+.right .follow-list .name{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.right .follow-list .username{
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.right .follow-list button{
+    width: auto;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.right .follow-card{
+    width: 100%;
+}
+
+.right .follow-card>form{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--secondary-background);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+.right .follow-list::-webkit-scrollbar, #posts::-webkit-scrollbar,.profile .reach-list .follow-list::-webkit-scrollbar,#post-section textarea::-webkit-scrollbar {
+    width: 12px;
+}
+
+.right .follow-list::-webkit-scrollbar-track, #posts::-webkit-scrollbar-track,.profile .reach-list .follow-list::-webkit-scrollbar-track,#post-section textarea::-webkit-scrollbar-track {
+    background: var(--primary-background);
+}
+
+.right .follow-list::-webkit-scrollbar-thumb, #posts::-webkit-scrollbar-thumb,.profile .reach-list .follow-list::-webkit-scrollbar-thumb,#post-section textarea::-webkit-scrollbar-thumb {
+    background: var(--secondary-background);
+    border-radius: 6px;
+    border: 3px solid var(--primary-background);
+}
+
+.right .follow-list::-webkit-scrollbar-thumb:hover, #posts::-webkit-scrollbar-thumb:hover,.profile .reach-list .follow-list::-webkit-scrollbar-thumb:hover,#post-section textarea::-webkit-scrollbar-thumb:hover {
+    background: var(--component-color);
+}
+
+.right .follow-list, #posts,.profile .reach-list .follow-list,#post-section textarea {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-background) var(--primary-background);
+}
+
+.right .follow-list:hover, #posts:hover,.profile .reach-list .follow-list:hover,#post-section textarea:hover {
+    scrollbar-color: var(--component-color) var(--primary-background);
+}
+
+.follow-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+img{
+    width: 30px;
+}
+
+nav>img{
+    width: 60px;
+}
+
+.invert{
+    filter: invert(180);
+}
+
+.none,#connect{
+    display: none;
+}
+
+/* responsivness */
+@media screen and (max-width: 1100px){
+    .main{    
+        display: grid;
+        grid-template-columns: minmax(150px, 400px) minmax(500px, auto);
+        grid-template-areas: "left center";
+    
+        gap: 1.5px;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .center>.right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        height: 100%;
+    }
+
+    #connect{
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 750px){
+    .main{
+        height: 100svh;
+    
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto; 
+        grid-template-areas: "main";
+
+        gap: 1.5px;
+    }
+
+    .center{
+        grid-area: main;
+        height: 100%;
+    }
+
+    .left{
+        position: absolute;
+        left: -100%;        
+
+        width: 100vw;
+        height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s linear;
+    }
+
+    #post-section textarea{
+        border: none;
+        margin: 0;
+    }
+
+    button{
+        padding: 5px 20px;
+    }
+
+    #hamburger{
+        display: flex;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+
+        transition: all 0.3s linear;
+    }
+
+    .profile .reach-list .follow-list{
+        box-sizing: content-box;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .profile .reach-list .follow-list{
+        box-sizing: content-box;
+        padding: 10px;
+    }
+
+    .profile>.info>.profile-pic{
+        width: auto;
+        min-width: 60px;
+        max-width: 120px;
+        height: auto;
+        min-height: 60px;
+        max-height: 120px;
+    }
+
+    .center{
+        padding: 20px;
+    }
+
+}
+
+@media screen and (max-width: 400px){
+    .center{
+        padding: 10px;
+    }
+
+    .profile .info .name p.name{
+        font-size: 1rem;
+    }
+
+    .profile .info .name p.username{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 365px){
+    .center{
+        padding: 5px;
+    }
+
+    #post-section{
+        box-sizing: border-box;
+        padding: 10px 10px 0px 10px;
+    }
+}

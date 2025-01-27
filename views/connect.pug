@@ -1,0 +1,15 @@
+extends base
+include _usersListCard.pug
+
+block content
+    .right
+        h3 Who to Follow 
+        .follow-list
+            each user in users
+                +usersListCard(username, user.username, user.name,'follow')
+        h3 Who you Follow 
+        .follow-list
+            each user in followings
+                +usersListCard(username, user.username, user.name,'unfollow')
+
+                

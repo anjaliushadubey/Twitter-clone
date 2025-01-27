@@ -1,0 +1,18 @@
+extends base
+include _postCard.pug
+
+block content
+    .header 
+        p For you 
+        .line 
+    #post-section
+        .profile-pic
+        form(action="/api/v1/post" method="post")
+            input#username(type="text" name="username" value=username)
+            input#name(type="text" name="name" value=name)
+            textarea(rows="4" name="tweet" placeholder="What is happening?!")
+            //- .btn
+            button(type="submit") Post
+    #posts 
+        each post in posts
+            +postCard(post.username,post.name,post.tweet,post.date)

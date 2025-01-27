@@ -1,0 +1,32 @@
+extends base
+include _usersListCard.pug
+
+mixin follow-list(action,data)
+    h4=action
+    //- .list
+    each user in data
+        .info
+            .profile-pic
+            .name
+                p.name=user.name  
+                p.username=user.username 
+
+block content
+    .profile
+        h4 Your Profile
+        .info
+            .profile-pic
+            .name
+                p.name=name  
+                p.username=username 
+            .reach 
+                p.followers #{followers.length} follower 
+                p.followings #{followings.length} following 
+
+        .reach-list
+            .follow-list
+                +follow-list("Follower",followers)
+
+            .follow-list
+                +follow-list("Following",followings)
+                

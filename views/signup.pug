@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Twitter Clone | Signup 
+        link(rel="stylesheet" href="/css/signup.css")
+    body
+        .login-container
+            h1.login-title Signup
+            form.signup-form(action="/signup" method="POST")
+                .input-group
+                    label(for="username") Username
+                    input(type="text" id="username" name="username" required)
+                .input-group
+                    label(for="name") Name
+                    input(type="text" id="name" name="name" required)
+                .input-group
+                    label(for="email") Email
+                    input(type="email" id="email" name="email" required)
+                .input-group
+                    label(for="password") Password
+                    input(type="password" id="password" name="password" required)
+                .input-group
+                    label(for="passwordConfirm") Confirm Password
+                    input(type="password" id="passwordConfirm" name="passwordConfirm" required)
+                button(type="submit" class="btn signup-btn") Continue
+            a(href="/login") 
+                button(class="btn login-btn") Back to Login

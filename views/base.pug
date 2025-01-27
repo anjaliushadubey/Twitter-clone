@@ -1,0 +1,44 @@
+include _usersListCard.pug
+include _userCard.pug
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/style.css")
+        title Twitter Clone | #{title}
+    body 
+    .main
+        .left
+            nav
+                img.invert(src="svg/logo.svg", alt="twitter logo")
+                a(href="/")
+                    img(src="svg/home.svg", alt="home") 
+                    p Home 
+                a(href="/profile")
+                    img.invert(src="svg/profile.svg", alt="profile") 
+                    p Profile 
+                a#connect(href="/connect")
+                    img.invert(src="svg/connect.svg", alt="connect") 
+                    p Connect  
+                a(href="/api/v1/auth/logout")
+                    img.invert(src="svg/logout.svg", alt="logout") 
+                    p Logout
+            +userCard(username, name)
+
+        .center 
+            img.invert.none#hamburger(src="svg/navbar.svg", alt="navbar")
+            block content 
+
+        .right 
+            h3 Who to Follow 
+            .follow-list
+                each user in users
+                    +usersListCard(username, user.username, user.name,'follow')
+            h3 Who you Follow 
+            .follow-list
+                each user in followings
+                    +usersListCard(username, user.username, user.name,'unfollow')
+
+        script(src="/script.js")

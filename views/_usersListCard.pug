@@ -1,0 +1,10 @@
+mixin usersListCard(customer, username, name, action)
+    .follow-card 
+        form(action=`api/v1/user/${action}/${customer}` method="post")
+            .profile-pic
+            .info
+                p.name= name 
+                p.username= username
+            input#username(type="text" name="username" value=username)
+            input#name(type="text" name="name" value=name)
+            button(type="submit") #{action}

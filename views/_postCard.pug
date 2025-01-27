@@ -1,0 +1,10 @@
+mixin postCard(username,name,tweet,date)
+    .posts
+        .info
+            .profile-pic            
+            p.name= name 
+            p.username= username 
+        p.tweet= tweet 
+        -const formattedTime = date.toLocaleTimeString('en-US', {hour: 'numeric',minute: 'numeric',hour12: true}).toLowerCase();
+        -const formattedDate = date.toLocaleDateString('en-GB', {day: '2-digit',month: 'short',year: 'numeric'});
+        p.date= `${formattedTime} ${formattedDate}`
